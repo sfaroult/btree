@@ -454,5 +454,13 @@ extern int btree_delete(char *key) {
     } else {
       ret = delete_key(btree_root(), key, 0);
     }
+    /*
+    if (debugging()) {
+      if (btree_check(btree_root(), (char *)NULL)) {
+        btree_display(btree_root(), 0);
+        assert(0);  // Force exit
+      }
+    }
+    */
     return ret;
 }

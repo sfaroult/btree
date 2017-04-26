@@ -1,7 +1,7 @@
 CFLAGS=-Wall
 OBJFILES= btree.o btree_op.o btree_ins.o btree_del.o btree_search.o \
 		  bt.o debug.o
-LIBS=
+#LIBS= -lefence
 
 all: btree
 

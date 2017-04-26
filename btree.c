@@ -220,17 +220,7 @@ int main(int argc, char **argv) {
         if (!sscanf(optarg, "%d", &maxkeys)) {
           printf("Invalid max number of keys - using %d\n", btree_maxkeys());
         }
-        if (maxkeys % 2 == 0) {
-          maxkeys++;
-          printf("The maximum number of keys must be odd - using %d\n",
-                 maxkeys);
-        }
-        if (maxkeys < 1) {
-          printf("Invalid max number of keys %d - using %d\n",
-                 maxkeys, btree_maxkeys());
-        } else {
-          btree_setmaxkeys(maxkeys);
-        }
+        btree_setmaxkeys(maxkeys);
         break;
       case '?':
       default:

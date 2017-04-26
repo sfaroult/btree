@@ -88,6 +88,8 @@ extern char btree_check(NODE_T *n, char *prev_key) {
   if (n) {
     int  i;
 
+    assert((n->parent == NULL)
+           || ((n->keycnt <= btree_maxkeys()) && (n->keycnt >= MIN_KEYS)));
     if (prev_key == NULL) {
       last_key = prev_key;
     }   
