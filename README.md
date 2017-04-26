@@ -1,6 +1,7 @@
 # btree
 This is a command-line tool for demoing B-trees during a class (data structures, database concepts ...). The implementation isn't standard (each node for instance contains a pointer back to its parent), coding isn't necessarily optimal but it's robust - it has been tested successfully, with a various number of keys per node, on the random insertion of 10,000 values that were later all randomly deleted. Only keys are stored in the tree (no associated data).
  The default number of keys is 4, which can be changed with the -k &lt;value&gt; flag when invoking the program (type ./btree -? for available flags). One feature that can be interesting, especially if short on time, is the pre-loading of the B-Tree with values read from a file, so as to jump immediately to the interesting bits with nodes one key away from splitting or merging depending on whether you are inserting or removing keys.
+
  Note also that keys are expected to be strings by default (easier to read or guess from a distance IMHO). If you want to use integer values, popular with text books, you must use the -n flag to get a numerical ordering of keys.
 A command line interface allows to add and remove keys, and to display the content of the B-Tree at will. The HELP command lists everything available.
 The TRC command turns on extensive tracing, that shows (with indentation where the program recurses) all performed operations. It's turned off with NOTRC.
