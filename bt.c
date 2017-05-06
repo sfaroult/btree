@@ -40,7 +40,7 @@ extern int bt_search(char *w) {
       if ((comp = strcasecmp(G_bt_words[mid], w)) == 0) {
          pos = mid;
          start = end + 1;
-       } else if ((mid < BT_COUNT)
+       } else if ((mid < BT_COUNT - 1)
                && ((comp = strcasecmp(G_bt_words[mid+1], w)) == 0)) {
          pos = mid+1;
          start = end + 1;
